@@ -1,0 +1,45 @@
+{
+  "expo": {
+    "name": "test-1",
+    "slug": "test-1",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static"
+    },
+    "notification": {
+      "web": {
+        "vapidPublicKey": "BDUMJPJAeWXDQqifOW1bfcxnYQCTtFRrV51fK77dPIgBNnz6TVPSWLDC1AZOrOoea-L870Ytw2VGsBiCgebogJc"
+      }
+    },
+    "plugins": [
+      "expo-router"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "14ab8a75-cf5d-42a2-a974-4e83fc15807a"
+      }
+    }
+  }
+}
