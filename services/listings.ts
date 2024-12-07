@@ -8,6 +8,8 @@ export interface Listing {
   images: string[];
   link: string;
   timestamp: string;
+  searchTerm: string;
+  averagePrice: number;
 }
 
 export async function getListings(): Promise<Listing[]> {

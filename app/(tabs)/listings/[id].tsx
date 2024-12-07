@@ -75,6 +75,27 @@ export default function ListingDetailsScreen() {
       <View style={styles.content}>
         <Text style={styles.title}>{listing.title}</Text>
         <Text style={styles.price}>{listing.price} kr</Text>
+        
+        <View style={styles.infoContainer}>
+          <View style={styles.infoRow}>
+            <Text style={styles.infoLabel}>Sökord:</Text>
+            <Text style={styles.infoValue}>{listing.searchTerm}</Text>
+          </View>
+          <View style={styles.infoRow}>
+            <Text style={styles.infoLabel}>Genomsnittspris:</Text>
+            <Text style={styles.infoValue}>{listing.averagePrice} kr</Text>
+          </View>
+          <View style={styles.infoRow}>
+            <Text style={styles.infoLabel}>Uppskattad vinstmarginal:</Text>
+            <Text style={[
+              styles.infoValue,
+              { color: listing.price <= listing.averagePrice ? '#4CAF50' : '#F44336' }
+            ]}>
+              {(listing.averagePrice - listing.price).toLocaleString()} kr
+            </Text>
+          </View>
+        </View>
+
         <TouchableOpacity 
           style={styles.button} 
           onPress={() => listing.link && Linking.openURL(listing.link)}
@@ -126,6 +147,27 @@ const styles = StyleSheet.create({
   price: {
     fontSize: 20,
     marginBottom: 16,
+  },
+  infoContainer: {
+    marginVertical: 16,
+    padding: 16,
+    backgroundColor: '#f5f5f5',
+    borderRadius: 8,
+  },
+  infoRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 8,
+  },
+  infoLabel: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#666',
+  },
+  infoValue: {
+    fontSize: 16,
+    fontWeight: '500',
   },
   button: {
     backgroundColor: '#007AFF',
